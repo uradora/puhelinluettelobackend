@@ -1,1 +1,1 @@
-https://puhkuluettelo.herokuapp.com/api/persons
+https://puhkuluettelo.herokuapp.com/
