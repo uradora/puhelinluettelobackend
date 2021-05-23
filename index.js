@@ -59,7 +59,7 @@ app.get('/api/persons/:id', (req, res) => {
     })
 })
 
-app.delete('/api/persons/:id', (req, res) => {
+app.delete('/api/persons/:id', (req, res, next) => {
   Person.findByIdAndRemove(req.params.id)
     .then((result) => {
       res.status(204).end()
@@ -67,7 +67,7 @@ app.delete('/api/persons/:id', (req, res) => {
     .catch((error) => next(error))
 })
 
-app.post('/api/persons', (req, res) => {
+app.post('/api/persons', (req, res, next) => {
   const body = req.body
 
   if (!body.name || !body.number) {
